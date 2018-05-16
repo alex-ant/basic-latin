@@ -14,6 +14,10 @@ func TestToBasicLatin(t *testing.T) {
 		"Failed to convert string to basic latin")
 	require.Equal(t, "abcdefghijklmnopqrstuvwxyz", ToBasicLatin("áƃćđèƒġĥĩǰƙŀmņòƥqȓșţùvŵxýź"),
 		"Failed to convert string to basic latin")
+
+	// Incluse special cases.
+	require.Equal(t, "aAshashbcdEthethefghijklmnopqrstuvwssxzyz", ToBasicLatin("áÆæƃćđÐðèƒġĥĩǰƙŀmņòƥqȓșţùvŵßxýź"),
+		"Failed to convert string to basic latin")
 }
 
 func TestGetNonBasicCapitalLatinLetters(t *testing.T) {

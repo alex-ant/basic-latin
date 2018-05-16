@@ -146,7 +146,14 @@ func GetNonBasicLatinLetters(blCharacter rune) []rune {
 // e.g. Alizée -> Alizee
 func ToBasicLatin(text string) (normalized string) {
 	for _, c := range text {
+		sc, scOk := specialCases[c]
+		if scOk {
+			normalized += sc
+			continue
+		}
+
 		normalized += string(getBasicLatinCharacterForRune(c))
 	}
+
 	return
 }

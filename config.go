@@ -53,3 +53,12 @@ x:0
 y:253,255,375,436
 z:378,380,382,438
 `
+
+var specialCases = map[rune]string{
+	'ß': "ss",
+	'Æ': "Ash",
+	'æ': "ash",
+	'': "z",
+	'Ð': "Eth",
+	'ð': "eth",
+}
